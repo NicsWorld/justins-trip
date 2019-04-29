@@ -25,7 +25,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $post = new Post();
+        return view('posts.create')->with(compact('post'));
     }
 
     /**
@@ -36,7 +37,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $title = $request->post_title;
+      $body = $request->post_body;
+
+      $post = Post::create([
+      'title' => $title,
+      'body' => $body,
+      'user_id' => auth()->id()
+      ]);
+
+      return redirect('/home');
     }
 
     /**

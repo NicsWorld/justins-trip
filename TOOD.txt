@@ -6,3 +6,4 @@
 -homepage design
 -to justin page
 -daily jokes
+-remove bootstrap

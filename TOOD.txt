@@ -1,7 +1,3 @@
-login locally -
-  u - nic@nic.com
-  p - flower.114
-
 ~ thoughts ~
 -motivational quotes
 -photo upload

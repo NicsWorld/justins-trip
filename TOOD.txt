@@ -1,9 +1,9 @@
 ~ thoughts ~
 -motivational quotes
 -photo upload
--make new posts
 -make accounts for everyone and disable registration?
 -homepage design
 -to justin page
 -daily jokes
 -remove bootstrap
+-time uploaded, human time php thing

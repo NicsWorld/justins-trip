@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
           @foreach ($posts as $post)
-            <div class="card">
+            <div class="card post">
                 <div class="card-header">{{$post->title}}</div>
                 <div class="card-body">{{$post->body}}</div>
             </div>

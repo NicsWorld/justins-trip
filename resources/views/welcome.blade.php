@@ -12,7 +12,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Styles -->
         <style>
-      
+
         </style>
     </head>
     <body>
@@ -33,7 +33,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Justins Trips
+                    Justins Trip
                 </div>
 
                 <div class="links">

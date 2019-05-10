@@ -3,12 +3,14 @@
 @section('content')
 <div class="container">
   <h1>All Posts <a href="/posts/create"><button class="btn-primary btn">+</button></a></h1>
-
     <div class="row justify-content-center">
         <div class="col-md-8">
           @foreach ($posts as $post)
             <div class="card post">
-                <div class="card-header">{{$post->title}}</div>
+                <div class="card-header">
+                  {{$post->title}}
+                  <div>{{$post->user->name}} posted...{{$post->created_at->diffForHumans()}}</div>
+                </div>
                 <div class="card-body">{{$post->body}}</div>
             </div>
             @endforeach

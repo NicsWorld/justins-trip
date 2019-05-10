@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-  public $timestamps = false;
+  public $timestamps = true;
 
-  protected $fillable = ['title', 'body', 'user_id'];
+  protected $fillable = ['title', 'body', 'user_id', 'created_at', 'updated_at'];
 
+  public function user()
+  {
+      return $this->belongsTo('App\User');
+  }
 }

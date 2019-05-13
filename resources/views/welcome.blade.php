@@ -33,7 +33,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Justins Trip
+                    Justin's PCT Hike
                 </div>
 
                 <div class="links">

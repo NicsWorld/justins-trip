@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
     /**
@@ -25,8 +25,13 @@ class PostController extends Controller
      */
     public function create()
     {
+      if (Auth::user()) {
         $post = new Post();
-        return view('posts.create')->with(compact('post'));
+        return view('posts.form.create')->with(compact('post'));
+      }
+      else{
+        return view('unauthenticated');
+      }
     }
 
     /**
@@ -40,11 +45,26 @@ class PostController extends Controller
       $title = $request->post_title;
       $body = $request->post_body;
 
-      $post = Post::create([
-      'title' => $title,
-      'body' => $body,
-      'user_id' => auth()->id()
-      ]);
+      if($request->hasFile('photo')) {
+        $photo = $request->photo;
+        $filename = $photo->getClientOriginalName();
+        $filename = $photo->store('public');
+
+        $post = Post::create([
+        'title' => $title,
+        'body' => $body,
+        'user_id' => auth()->id(),
+        'photo' => $filename
+        ]);
+      } else {
+        $post = Post::create([
+        'title' => $title,
+        'body' => $body,
+        'user_id' => auth()->id()
+        ]);
+      }
+
+
 
       return redirect('/posts');
     }
@@ -55,9 +75,10 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
-        //
+      $post = Post::find($id);
+      return view('posts.show')->with(compact('post'));
     }
 
     /**

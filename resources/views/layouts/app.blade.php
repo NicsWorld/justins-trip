@@ -66,6 +66,16 @@
                                     </form>
                                 </div>
                             </li>
+                            <li class="nav-item">
+                                  <a class="nav-link" href="/posts">
+                                    Posts
+                                  </a>
+                                </li>
+                            <li class="nav-item">
+                                  <a class="nav-link" href="/photos">
+                                    Photos
+                                  </a>
+                                </li>
                         @endguest
                     </ul>
                 </div>

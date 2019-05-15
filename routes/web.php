@@ -21,3 +21,6 @@ Route::get('/posts', 'PostController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/posts', 'PostController@store');
 Route::get('/posts/create', 'PostController@create');
+Route::get('/photos', 'PhotoController@index');
+
+Route::get('/posts/{id}', 'PostController@show');

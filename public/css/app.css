@@ -10716,6 +10716,16 @@ body {
 
 .post {
   margin: 20px;
+  text-align: center;
+}
+
+.post button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.photo-gallery {
+  padding: 15px 0;
 }
 
 .navbar-laravel {
